@@ -1,16 +1,26 @@
-export const App = () => {
+import React from 'react';
+
+import { Container } from './App.styled';
+import Phonebook from './Phonebook';
+import ContactList from './ContactList';
+import Filter from './Filter';
+import { Toaster } from 'react-hot-toast';
+
+function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <h1>Phonebook</h1>
+      <Phonebook />
+      <h2>Contacts</h2>
+      <Filter />
+      <ContactList />
+      <Toaster
+        toastOptions={{
+          duration: 3000,
+        }}
+      />
+    </Container>
   );
-};
+}
+
+export default App;
